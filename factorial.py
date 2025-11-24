@@ -1,4 +1,16 @@
+#!/usr/bin/python3
 import sys
-import math
 
-print(math.factorial(int(sys.argv[1])))
+def factorial(n):
+    result = 1
+    while n > 1:
+        result *= n
+        n -= 1  # <--- THIS WAS MISSING
+    return result
+
+# Check if an argument was provided to avoid an IndexError
+if len(sys.argv) > 1:
+    f = factorial(int(sys.argv[1]))
+    print(f)
+else:
+    print("Usage: ./factorial.py <number>")
