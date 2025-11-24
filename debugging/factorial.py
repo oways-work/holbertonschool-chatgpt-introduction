@@ -2,4 +2,8 @@
 import sys
 import math
 
-print(math.factorial(int(sys.argv[1])))
+if len(sys.argv) > 1:
+    print(math.factorial(int(sys.argv[1])))
+else:
+    print("Error: You must provide a number.")
+    print("Usage: ./factorial.py <number>")
